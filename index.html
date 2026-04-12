@@ -1,277 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitHUb Nutrition Center – Fit Mind. Fit Body. Fit Soul. | Ahmedabad</title>
-<meta name="description" content="FitHUb Nutrition Center in Bhadaj, Ahmedabad. Weight loss, weight gain, nutrition coaching by expert coaches Mitesh & Trupti Patel. 2000+ lives transformed.">
-<link rel="icon" type="image/png" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
-<style>
-/* ===== HERO ===== */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;padding-top:68px;}
-.hero-slider{position:absolute;inset:0;z-index:0;}
-.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease;background-size:cover;background-position:center;}
-.hero-slide.active{opacity:1;}
-.hero-slide-1{background-image:linear-gradient(135deg,rgba(253,248,242,0.92) 0%,rgba(245,239,228,0.85) 40%,rgba(237,227,212,0.70) 100%),url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1400&q=80');}
-.hero-slide-2{background-image:linear-gradient(135deg,rgba(253,248,242,0.88) 0%,rgba(245,239,228,0.82) 40%,rgba(237,227,212,0.65) 100%),url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=1400&q=80');}
-.hero-slide-3{background-image:linear-gradient(135deg,rgba(253,248,242,0.90) 0%,rgba(245,239,228,0.84) 40%,rgba(237,227,212,0.68) 100%),url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1400&q=80');}
-.hero-slide-4{background-image:linear-gradient(135deg,rgba(253,248,242,0.90) 0%,rgba(245,239,228,0.84) 40%,rgba(237,227,212,0.68) 100%),url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1400&q=80');}
-.hero-slide-5{background-image:linear-gradient(135deg,rgba(253,248,242,0.90) 0%,rgba(245,239,228,0.84) 40%,rgba(237,227,212,0.68) 100%),url('https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1400&q=80');}
-.hero-dots{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:10;}
-.hero-dot{width:10px;height:10px;border-radius:50%;background:rgba(200,129,58,0.30);border:2px solid var(--accent);cursor:pointer;transition:all 0.3s;}
-.hero-dot.active{background:var(--accent);transform:scale(1.2);}
-.hero-content{position:relative;z-index:5;max-width:1180px;margin:0 auto;padding:60px 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,129,58,0.12);border:1.5px solid rgba(200,129,58,0.35);border-radius:50px;padding:7px 18px;font-size:12px;font-weight:700;color:var(--accent);margin-bottom:20px;letter-spacing:0.5px;}
-.hero-badge .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse 2s infinite;}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.6);}}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,64px);font-weight:700;color:var(--brown);line-height:1.12;margin-bottom:18px;}
-.hero-title em{font-style:italic;color:var(--accent);}
-.hero-tagline{font-size:17px;color:var(--text-muted);line-height:1.8;margin-bottom:32px;max-width:460px;}
-.hero-stats{display:flex;gap:28px;margin-bottom:36px;flex-wrap:wrap;}
-.h-stat{text-align:center;padding:14px 18px;background:rgba(255,255,255,0.80);border-radius:14px;border:1px solid var(--border);backdrop-filter:blur(6px);}
-.h-stat .num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--accent);}
-.h-stat .lbl{font-size:11px;color:var(--text-muted);margin-top:2px;font-weight:600;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
-.hero-right{display:flex;flex-direction:column;gap:20px;align-items:flex-end;}
-.hero-anniv-card{background:rgba(255,255,255,0.92);border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 8px 36px var(--shadow-strong);max-width:340px;width:100%;}
-.hero-anniv-card img{width:100%;height:auto;display:block;}
-.hero-anniv-tag{padding:14px 18px;text-align:center;}
-.hero-anniv-tag p{font-size:13px;font-weight:700;color:var(--accent);}
-
-/* ===== WHY US ===== */
-.whyus{background:#fff;}
-.whyus-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px;}
-.why-card{background:var(--cream);border:1px solid var(--border-light);border-radius:20px;padding:32px 26px;text-align:center;transition:all 0.35s;}
-.why-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px var(--shadow-strong);background:#fff;}
-.why-icon{width:64px;height:64px;border-radius:18px;background:rgba(200,129,58,0.10);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:28px;}
-.why-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:var(--brown);margin-bottom:10px;}
-.why-text{font-size:14px;color:var(--text-muted);line-height:1.7;}
-
-/* ===== TRANSFORMATION TEASER ===== */
-.transform-teaser{background:var(--cream2);}
-.results-row{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:52px;}
-.result-box{background:#fff;border-radius:18px;padding:28px 20px;text-align:center;border:1px solid var(--border-light);transition:all 0.35s;}
-.result-box:hover{transform:translateY(-4px);box-shadow:0 10px 28px var(--shadow-strong);}
-.result-num{font-family:'Playfair Display',serif;font-size:40px;font-weight:700;color:var(--accent);}
-.result-label{font-size:13px;color:var(--text-muted);font-weight:600;margin-top:4px;}
-
-/* ===== QUICK REVIEWS ===== */
-.quick-reviews{background:#fff;}
-.reviews-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;}
-.review-mini{background:var(--cream);border:1px solid var(--border-light);border-radius:16px;padding:22px 20px;transition:all 0.35s;}
-.review-mini:hover{box-shadow:0 8px 24px var(--shadow);}
-.stars{color:#F5B800;font-size:14px;margin-bottom:10px;letter-spacing:1px;}
-.review-mini .text{font-size:13px;color:var(--text-muted);line-height:1.7;margin-bottom:12px;}
-.review-mini .author{font-size:13px;font-weight:700;color:var(--brown);}
-
-/* ===== CTA BANNER ===== */
-.cta-banner{background:linear-gradient(135deg,var(--brown) 0%,var(--brown-light) 100%);padding:80px 0;position:relative;overflow:hidden;}
-.cta-banner::before{content:'';position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=40') center/cover;opacity:0.06;}
-.cta-inner{position:relative;z-index:1;text-align:center;}
-.cta-inner h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);font-weight:700;color:#fff;margin-bottom:12px;}
-.cta-inner p{font-size:16px;color:rgba(255,255,255,0.75);max-width:500px;margin:0 auto 36px;line-height:1.7;}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.btn-white{background:#fff!important;color:var(--accent)!important;box-shadow:0 4px 16px rgba(0,0,0,0.15)!important;}
-.btn-white:hover{box-shadow:0 8px 24px rgba(0,0,0,0.20)!important;}
-
-/* ===== MOBILE ===== */
-@media(max-width:900px){
-  .hero-content{grid-template-columns:1fr;padding:40px 20px 80px;gap:32px;}
-  .hero-right{align-items:center;}
-  .hero-anniv-card{max-width:100%;}
-  .whyus-grid{grid-template-columns:1fr 1fr;}
-  .results-row{grid-template-columns:1fr 1fr;}
-  .reviews-row{grid-template-columns:1fr;}
-}
-@media(max-width:600px){
-  .whyus-grid{grid-template-columns:1fr;}
-  .hero-stats{gap:10px;}
-  .h-stat{padding:10px 14px;flex:1;min-width:80px;}
-  .hero-btns{flex-direction:column;}
-  .btn-primary,.btn-outline{text-align:center;justify-content:center;}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="FitHub Nutrition Center – Fit Mind. Fit Body. Fit Soul. Your complete wellness destination." />
+  <title>FitHub Nutrition Center</title>
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
-<body data-page="index">
-<div id="nav-placeholder"></div>
+<body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-slider" id="heroSlider">
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    <div class="hero-slide hero-slide-3"></div>
-    <div class="hero-slide hero-slide-4"></div>
-    <div class="hero-slide hero-slide-5"></div>
-  </div>
-  <div class="hero-content">
-    <div>
-      <div class="hero-badge"><span class="dot"></span> Ahmedabad's Trusted Wellness Center</div>
-      <h1 class="hero-title">Transform Your<br><em>Body, Mind</em><br>&amp; Soul</h1>
-      <p class="hero-tagline">Where busy lives find balanced wellness. Science-backed, personalized nutrition and fitness programs for <strong>real, lasting results</strong>.</p>
-      <div class="hero-stats">
-        <div class="h-stat"><div class="num">2000+</div><div class="lbl">Lives Changed</div></div>
-        <div class="h-stat"><div class="num">10+</div><div class="lbl">Years Expert</div></div>
-        <div class="h-stat"><div class="num">3+</div><div class="lbl">Countries</div></div>
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="logo">
+        <img src="images/logo.png" alt="FitHub Logo" width="64" height="60" />
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a href="tel:+919426508066" class="btn btn-outline">📞 Call Us</a>
+        <a href="https://wa.me/919426508066" class="btn btn-green" target="_blank" rel="noopener">WhatsApp</a>
       </div>
-      <div class="hero-btns">
-        <a href="contact.html" class="btn-primary">Get Free Demo 🎯</a>
-        <a href="services.html" class="btn-outline">Explore Services</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">🌿 Nutrition &amp; Wellness</div>
+      <h1 class="hero-title">
+        Transform Your<br/>
+        <span class="accent">Mind, Body</span><br/>
+        &amp; Soul
+      </h1>
+      <p class="hero-subtitle">
+        Personalised nutrition plans, expert guidance, and a holistic approach to your wellness journey.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/919426508066" class="btn btn-green btn-lg" target="_blank" rel="noopener">
+          💬 Start Your Journey
+        </a>
+        <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Happy Clients</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">5★</span><span class="stat-label">Rated</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Natural Plans</span></div>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-anniv-card" id="anniversaryCard">
-        <img id="anniversaryImg" src="" alt="FitHUb World Health Day Offer">
-        <div class="hero-anniv-tag">
-          <p>🎉 1 Year Anniversary — Special Offers Available!</p>
+    <div class="hero-visual">
+      <div class="logo-ring">
+        <img src="images/logo.png" alt="FitHub" class="hero-logo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE STRIP -->
+  <div class="marquee-strip" aria-hidden="true">
+    <div class="marquee-track">
+      <span>🥦 Nutrition Plans</span>
+      <span>💪 Fitness Coaching</span>
+      <span>🧘 Wellness Programs</span>
+      <span>🥗 Diet Consultation</span>
+      <span>🌿 Natural Approach</span>
+      <span>🏃 Weight Management</span>
+      <span>🥦 Nutrition Plans</span>
+      <span>💪 Fitness Coaching</span>
+      <span>🧘 Wellness Programs</span>
+      <span>🥗 Diet Consultation</span>
+      <span>🌿 Natural Approach</span>
+      <span>🏃 Weight Management</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What We Offer</span>
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-sub">Holistic programs tailored to your unique body and lifestyle goals.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card" data-delay="0">
+          <div class="card-icon">🥗</div>
+          <h3>Diet &amp; Nutrition</h3>
+          <p>Personalised meal plans built around your body type, goals, and food preferences.</p>
+        </div>
+        <div class="card" data-delay="100">
+          <div class="card-icon">💪</div>
+          <h3>Fitness Coaching</h3>
+          <p>Expert workout routines designed to complement your nutrition for maximum results.</p>
+        </div>
+        <div class="card" data-delay="200">
+          <div class="card-icon">🧘</div>
+          <h3>Mind &amp; Wellness</h3>
+          <p>Mental health strategies and mindfulness practices for a balanced life.</p>
+        </div>
+        <div class="card" data-delay="300">
+          <div class="card-icon">⚖️</div>
+          <h3>Weight Management</h3>
+          <p>Science-backed programs for sustainable weight loss and body composition improvement.</p>
+        </div>
+        <div class="card" data-delay="400">
+          <div class="card-icon">🌿</div>
+          <h3>Detox Programs</h3>
+          <p>Natural cleanse programs to reset your body and boost energy levels.</p>
+        </div>
+        <div class="card" data-delay="500">
+          <div class="card-icon">📋</div>
+          <h3>Health Tracking</h3>
+          <p>Regular assessments and follow-ups to monitor your progress and adjust your plan.</p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="hero-dots" id="heroDots"></div>
-</section>
+  </section>
 
-<!-- WHY US -->
-<section class="whyus">
-<div class="container">
-  <div class="text-center reveal">
-    <div class="section-label">Why FitHUb</div>
-    <h2 class="section-title">Where Science Meets <em>Wellness</em></h2>
-    <div class="divider"></div>
-    <p class="section-sub">We don't believe in shortcuts. Every plan is crafted uniquely for you — your body, your lifestyle, your goals.</p>
-  </div>
-  <div class="whyus-grid">
-    <div class="why-card reveal">
-      <div class="why-icon">🔬</div>
-      <div class="why-title">Science-Based Approach</div>
-      <div class="why-text">Every program is backed by the latest nutritional science, body composition research, and behavioral change methodology.</div>
-    </div>
-    <div class="why-card reveal reveal-delay-1">
-      <div class="why-icon">🎯</div>
-      <div class="why-title">100% Personalized</div>
-      <div class="why-text">No two plans are the same. We assess your BMI, BMR, body age, muscle mass, habits, and goals to craft your unique roadmap.</div>
-    </div>
-    <div class="why-card reveal reveal-delay-2">
-      <div class="why-icon">🤝</div>
-      <div class="why-title">Coaches Who Care</div>
-      <div class="why-text">Mitesh and Trupti have personally walked the transformation journey — they understand your struggles because they've lived them.</div>
-    </div>
-    <div class="why-card reveal">
-      <div class="why-icon">🌍</div>
-      <div class="why-title">International Reach</div>
-      <div class="why-text">Our mission has reached beyond India, impacting lives in multiple countries through online and offline coaching programs.</div>
-    </div>
-    <div class="why-card reveal reveal-delay-1">
-      <div class="why-icon">🏡</div>
-      <div class="why-title">Family Atmosphere</div>
-      <div class="why-text">Join a warm, uplifting community that motivates, supports, and celebrates your progress — every step of the way.</div>
-    </div>
-    <div class="why-card reveal reveal-delay-2">
-      <div class="why-icon">♾️</div>
-      <div class="why-title">Lifelong Results</div>
-      <div class="why-text">We focus on lifestyle change, not short-term fixes. What you learn and achieve with us stays with you for life.</div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- RESULTS -->
-<section class="transform-teaser">
-<div class="container">
-  <div class="text-center reveal">
-    <div class="section-label">Real Results</div>
-    <h2 class="section-title">Numbers That <em>Speak</em></h2>
-    <div class="divider"></div>
-  </div>
-  <div class="results-row">
-    <div class="result-box reveal"><div class="result-num">2000+</div><div class="result-label">Lives Transformed</div></div>
-    <div class="result-box reveal reveal-delay-1"><div class="result-num">10+</div><div class="result-label">Years of Excellence</div></div>
-    <div class="result-box reveal reveal-delay-2"><div class="result-num">26 kg</div><div class="result-label">Max Weight Loss</div></div>
-    <div class="result-box reveal reveal-delay-3"><div class="result-num">100%</div><div class="result-label">Personalised Plans</div></div>
-  </div>
-  <div style="text-align:center;margin-top:40px;">
-    <a href="about.html" class="btn-primary">Our Transformation Stories →</a>
-  </div>
-</div>
-</section>
-
-<!-- QUICK REVIEWS -->
-<section class="quick-reviews">
-<div class="container">
-  <div class="text-center reveal">
-    <div class="section-label">Happy Members</div>
-    <h2 class="section-title">What Our Community <em>Says</em></h2>
-    <div class="divider"></div>
-  </div>
-  <div class="reviews-row">
-    <div class="review-mini reveal">
-      <div class="stars">★★★★★</div>
-      <p class="text">"I lost 26 kg weight and it's an amazing experience full of joy. Great result in my health. Thank you so much FitHUb!"</p>
-      <div class="author">— Ashish Patel</div>
-    </div>
-    <div class="review-mini reveal reveal-delay-1">
-      <div class="stars">★★★★★</div>
-      <p class="text">"I lost 25 kg after pregnancy in 6 months! My confidence is boosted and I'm very happy with my result. Amazing coaches!"</p>
-      <div class="author">— Hally Modi</div>
-    </div>
-    <div class="review-mini reveal reveal-delay-2">
-      <div class="stars">★★★★★</div>
-      <p class="text">"My whole family uses this best nutrition every morning. I lost 23 kg and my husband lost 18 kg! Life totally changed."</p>
-      <div class="author">— Dhruvesha Patel</div>
-    </div>
-  </div>
-  <div style="text-align:center;margin-top:36px;">
-    <a href="reviews.html" class="btn-outline">Read All Reviews ★</a>
-  </div>
-</div>
-</section>
-
-<!-- CTA -->
-<div class="cta-banner">
-  <div class="container">
-    <div class="cta-inner reveal">
-      <h2>Ready to Begin Your Transformation?</h2>
-      <p>Get a free 3-day trial — no cost, no pressure. Experience the FitHUb difference in person or online.</p>
-      <div class="cta-btns">
-        <a href="contact.html" class="btn-primary btn-white">Book Free Demo 🎯</a>
-        <a href="https://wa.me/919426508066" target="_blank" class="btn-primary btn-green">WhatsApp Us 💬</a>
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container about-inner">
+      <div class="about-visual">
+        <div class="about-card-wrap">
+          <div class="about-logo-box">
+            <img src="images/logo.png" alt="FitHub" />
+          </div>
+          <div class="about-badge-float">🌱 Since 2020</div>
+        </div>
+      </div>
+      <div class="about-text">
+        <span class="section-tag">Our Story</span>
+        <h2 class="section-title">Fit Mind. Fit Body.<br/>Fit Soul.</h2>
+        <p>At FitHub Nutrition Center, we believe that true wellness comes from balance — nourishing your body with the right food, training your body to be strong, and cultivating a healthy mindset.</p>
+        <p>Our certified nutritionists and coaches work with you one-on-one to create a plan that fits YOUR life — not a generic template. We celebrate every milestone together.</p>
+        <ul class="about-list">
+          <li>✅ Certified nutritionists &amp; coaches</li>
+          <li>✅ 100% personalised approach</li>
+          <li>✅ Ongoing support &amp; accountability</li>
+          <li>✅ Natural, sustainable methods</li>
+        </ul>
+        <a href="https://wa.me/919426508066" class="btn btn-green" target="_blank" rel="noopener">Book a Free Consultation</a>
       </div>
     </div>
-  </div>
-</div>
+  </section>
 
-<div id="footer-placeholder"></div>
-<script src="images.js"></script>
-<script src="shared.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded',()=>{
-  // Load anniversary image
-  if(typeof IMGS !== 'undefined'){
-    document.getElementById('anniversaryImg').src = IMGS.anniversary;
-  }
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Real Results</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"FitHub completely changed my relationship with food. Lost 12kg in 3 months without starving myself!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">P</div>
+            <div><strong>Priya S.</strong><br/><small>Lost 12 kg</small></div>
+          </div>
+        </div>
+        <div class="testi-card featured">
+          <div class="stars">★★★★★</div>
+          <p>"The personalised plan was a game-changer. My energy levels are through the roof and I feel incredible."</p>
+          <div class="testi-author">
+            <div class="testi-avatar">R</div>
+            <div><strong>Rahul M.</strong><br/><small>Gained muscle, lost fat</small></div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="stars">★★★★★</div>
+          <p>"Best decision I ever made. The team is so supportive and the results speak for themselves!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">A</div>
+            <div><strong>Anjali K.</strong><br/><small>Improved health markers</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  // Hero slider
-  const slides = document.querySelectorAll('.hero-slide');
-  const dotsContainer = document.getElementById('heroDots');
-  let current = 0;
-  slides.forEach((_, i) => {
-    const d = document.createElement('div');
-    d.className = 'hero-dot' + (i===0?' active':'');
-    d.onclick = () => goSlide(i);
-    dotsContainer.appendChild(d);
-  });
-  function goSlide(n){
-    slides[current].classList.remove('active');
-    dotsContainer.children[current].classList.remove('active');
-    current = n;
-    slides[current].classList.add('active');
-    dotsContainer.children[current].classList.add('active');
-  }
-  setInterval(()=> goSlide((current+1)%slides.length), 4500);
-});
-</script>
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container cta-inner">
+      <div>
+        <h2>Ready to Start Your Transformation?</h2>
+        <p>Join 500+ clients who have changed their lives with FitHub.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="tel:+919426508066" class="btn btn-white">📞 +91 94265 08066</a>
+        <a href="https://wa.me/919426508066" class="btn btn-green-outline" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container contact-inner">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-sub">We're here to help you start your wellness journey.</p>
+      </div>
+      <div class="contact-cards">
+        <a href="tel:+919426508066" class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h4>Call Us</h4>
+          <p>+91 94265 08066</p>
+        </a>
+        <a href="https://wa.me/919426508066" class="contact-card" target="_blank" rel="noopener">
+          <div class="contact-icon">💬</div>
+          <h4>WhatsApp</h4>
+          <p>Chat with us anytime</p>
+        </a>
+        <div class="contact-card">
+          <div class="contact-icon">🕐</div>
+          <h4>Working Hours</h4>
+          <p>Mon–Sat: 9am – 7pm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="FitHub" width="50" />
+        <p>Fit Mind. Fit Body. Fit Soul.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/919426508066" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+      <p class="footer-copy">© 2025 FitHub Nutrition Center. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
