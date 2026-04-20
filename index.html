@@ -359,9 +359,60 @@ footer{background:#2C2218;border-top:none;padding:56px 0 28px;}
   .video-grid{grid-template-columns:1fr;}
   .transform-photo-grid{grid-template-columns:1fr 1fr;}
 }
+
+/* TOP INFO BAR */
+.topbar{
+  background:#1a1a1a;
+  color:#ccc;
+  font-size:12.5px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:7px 24px;
+  flex-wrap:wrap;
+  gap:6px;
+  z-index:1100;
+  position:relative;
+}
+.topbar-left{display:flex;align-items:center;flex-wrap:wrap;gap:16px;}
+.tb-item{display:flex;align-items:center;gap:5px;color:#bbb;}
+.tb-item a{color:#bbb;text-decoration:none;}
+.tb-item a:hover{color:#ff6b2b;}
+.topbar-right{display:flex;align-items:center;gap:16px;}
+.tb-link{color:#bbb;text-decoration:none;font-size:12.5px;}
+.tb-link:hover{color:#ff6b2b;}
+.tb-book{
+  background:#ff6b2b;
+  color:#fff !important;
+  padding:5px 14px;
+  border-radius:4px;
+  font-size:12.5px;
+  font-weight:600;
+  text-decoration:none;
+  transition:background .2s;
+}
+.tb-book:hover{background:#e55a1c;}
+@media(max-width:768px){
+  .topbar{flex-direction:column;align-items:flex-start;padding:8px 14px;}
+  .topbar-left{gap:8px;}
+  .tb-item{font-size:11.5px;}
+}
 </style>
 </head>
 <body>
+
+<!-- TOP INFO BAR -->
+<div class="topbar">
+  <div class="topbar-left">
+    <div class="tb-item">📞 <a href="tel:+91 94288 50738">+91 94288 50738</a></div>
+    <div class="tb-item">📍 FITHUB, B-214/215, Arcade Complex,Super City Township, Bhadaj,Ahmedabad, Gujarat 380060</div>
+    <div class="tb-item">🕐 Mon–Sat: 7:00 AM – 8:00 PM</div>
+  </div>
+  <div class="topbar-right">
+    <a class="tb-link" href="#" onclick="go('about');return false">About Us</a>
+    <a class="tb-book" href="#" onclick="go('book');return false">✦ Book Free Consult</a>
+  </div>
+</div>
 
 <!-- FLOATING BUTTONS -->
 <div class="float-btns">
